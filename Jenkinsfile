@@ -6,6 +6,11 @@ pipeline {
         skipDefaultCheckout()
     }
     stages {
+	stage("Build by gradle"){
+	    steps {
+		sh('build.sh')
+	    }    
+	}
         stage("One big stage") {
             steps {
                 sh "sudo service postgresql reload"
